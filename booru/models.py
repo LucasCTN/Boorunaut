@@ -256,7 +256,11 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('booru:post_detail', kwargs={'post_id': self.id})
-
+    
+    @property
+    def url(self):
+        return self.get_absolute_url()
+    
     def get_ordered_tags(self):
         ordered_tags = {}
         tags = self.tags.all().order_by('category', 'name')

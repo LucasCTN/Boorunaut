@@ -22,6 +22,7 @@ from django.urls import include, path, re_path
 
 from booru.models import Post
 from booru.sitemaps import PostSitemap, TagsSitemap, PostListSitemap
+from .api import api
 
 sitemaps = {
     'post_list': PostListSitemap,
@@ -30,6 +31,7 @@ sitemaps = {
 }
 
 urlpatterns = [
+    path("api/", api.urls),
     path('admin/', admin.site.urls),
     re_path(r'^', include('booru.urls')),
     re_path(r'^', include('booru.core.urls')),

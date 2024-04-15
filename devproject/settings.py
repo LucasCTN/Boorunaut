@@ -55,6 +55,9 @@ INSTALLED_APPS = [
     'simple_history',
     'rolepermissions',
     'crispy_forms',
+    'corsheaders',
+    'ninja_jwt',
+    'ninja_extra',
 ]
 
 MIDDLEWARE = [
